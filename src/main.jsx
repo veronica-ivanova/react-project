@@ -5,7 +5,7 @@ createRoot(document.getElementById("root")).render(
   <ul>
     {restaurants.map((item) => (
       <li>
-        <h1>{item.name}</h1>
+        <h2>{item.name}</h2>
 
         <h3>Меню</h3>
         <ul>
