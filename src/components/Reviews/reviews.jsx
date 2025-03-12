@@ -6,7 +6,9 @@ export const Reviews = ({ reviews }) => {
       <h3>Отзывы</h3>
       <ul>
         {reviews.map((review) => (
-          <Review key={review.id} review={review} />
+          <li key={review.id}>
+            <Review review={review} />
+          </li>
         ))}
       </ul>
     </div>

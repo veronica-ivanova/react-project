@@ -1,18 +1,19 @@
 import { Reviews } from "../Reviews/reviews";
 import { Menu } from "../Menu/menu";
 
-export const Restaurant = ({ restaurants }) => {
+export const Restaurant = ({ restaurant }) => {
+  const {name, menu, reviews} = restaurant;
   return (
-    <div>
-      {restaurants.map(({ id, name, menu, reviews }) => (
-        <div key={id}>
-          <h2>{name}</h2>
+    <div style={{ border: "solid" }}>
+      <h2>{name}</h2>
 
-          <Menu menu={menu} />
+      <Menu menu={menu} />
 
-          <Reviews reviews={reviews} />
-        </div>
-      ))}
+      {reviews.length ? (
+        <Reviews reviews={reviews} />
+      ) : (
+        "There are no reviews yet"
+      )}
     </div>
   );
 };
