@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-export const RestaurantList = ({ restaurants, onSelectRest }) => {
-  const [activeRestaurant, setActiveRestaurant] = useState(null);
-
+export const RestaurantList = ({ restaurants, onSelectRest, selectedRestaurant}) => {
   return (
     <div
       style={{
@@ -17,11 +13,12 @@ export const RestaurantList = ({ restaurants, onSelectRest }) => {
           key={restaurant.id}
           onClick={() => {
             onSelectRest(restaurant);
-            setActiveRestaurant(restaurant.id);
           }}
           style={{
             backgroundColor:
-              activeRestaurant === restaurant.id ? "darkgray" : "lightgray",
+              selectedRestaurant.id === restaurant.id
+                ? "darkgray"
+                : "lightgray"
           }}
         >
           <h2>{restaurant.name}</h2>
