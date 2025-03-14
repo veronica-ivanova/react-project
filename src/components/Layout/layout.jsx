@@ -1,22 +1,18 @@
+import { Header } from "../Header/header";
+import { Footer } from "../Footer/footer";
+
 const layoutStyle = {
   display: "grid",
   gridTemplateRows: "auto 1fr auto",
   minHeight: "100vh",
 };
-const commonStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  border: "solid",
-  minHeight: "100px",
-};
 
 export const Layout = ({ children }) => {
   return (
     <div style={layoutStyle}>
-      <header style={commonStyle}>HEADER</header>
+      <Header />
       <section>{children}</section>
-      <footer style={commonStyle}>FOOTER</footer>
+      <Footer />
     </div>
   );
 };

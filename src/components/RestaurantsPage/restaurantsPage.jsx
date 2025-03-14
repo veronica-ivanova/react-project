@@ -5,11 +5,11 @@ import { Restaurant } from "../Restaurant/restaurant";
 import { restaurants } from "../../constants/mock";
 
 export const RestaurantsPage = () => {
-  const [restaurant, setRest] = useState(restaurants[0]);
+  const [activeRestaurant, setActiveRestaurant] = useState(restaurants[0]);
   return (
     <div>
-      <RestaurantList restaurants={restaurants} onSelectRest={setRest} selectedRestaurant={restaurant} />
-      <Restaurant restaurant={restaurant}></Restaurant>
+      <RestaurantList restaurants={restaurants} onSetActiveRestaurant={setActiveRestaurant} activeRestaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
     </div>
   );
 };

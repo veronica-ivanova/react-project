@@ -1,4 +1,12 @@
-export const RestaurantList = ({ restaurants, onSelectRest, selectedRestaurant}) => {
+export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeRestaurant}) => {
+  
+  const handleSetActiveRestaurant = (restaurant) => {
+    if (activeRestaurant.id === restaurant.id) {
+      return;
+    }
+    onSetActiveRestaurant(restaurant);
+  };
+
   return (
     <div
       style={{
@@ -12,14 +20,9 @@ export const RestaurantList = ({ restaurants, onSelectRest, selectedRestaurant})
         <button
           key={restaurant.id}
           onClick={() => {
-            onSelectRest(restaurant);
+            handleSetActiveRestaurant(restaurant);
           }}
-          style={{
-            backgroundColor:
-              selectedRestaurant.id === restaurant.id
-                ? "darkgray"
-                : "lightgray"
-          }}
+          disabled={activeRestaurant.id === restaurant.id}
         >
           <h2>{restaurant.name}</h2>
         </button>
