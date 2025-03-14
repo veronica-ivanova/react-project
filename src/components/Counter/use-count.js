@@ -4,7 +4,7 @@ const MAX_COUNT = 5;
 const MIN_COUNT = 0;
 
 export const useCount = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(MIN_COUNT);
   
   const increment = () => {
     if (count < MAX_COUNT) {
