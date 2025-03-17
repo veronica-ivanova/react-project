@@ -1,5 +1,5 @@
 import { ReviewCounter } from "./reviewCounter";
-import { useReduce } from "./use-reducer";
+import { useForm } from "./use-form";
 
 export const ReviewForm = (props) => {
   const {
@@ -11,7 +11,7 @@ export const ReviewForm = (props) => {
     setName,
     setText,
     setReset,
-  } = useReduce();
+  } = useForm();
 
   return (
     <div>

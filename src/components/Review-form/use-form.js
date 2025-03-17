@@ -41,7 +41,7 @@ const reducer = (state, { type, payload }) => {
   }
 };
 
-export const useReduce = () => {
+export const useForm = () => {
   const [form, dispatch] = useReducer(reducer, DEFAULT_FROM_VALUE);
 
   const { name, text, count } = form;
