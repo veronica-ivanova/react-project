@@ -1,17 +1,17 @@
-import { ReviewCounter } from "./reviewCounter";
+import { Counter } from "../Counter/counter";
 import { useForm } from "./use-form";
 
 export const ReviewForm = (props) => {
   const {
-    name,
-    text,
-    count,
+    form,
     setDecrement,
     setIncrement,
     setName,
     setText,
     setReset,
   } = useForm();
+
+  const { name, text, rating } = form;
 
   return (
     <div>
@@ -29,10 +29,10 @@ export const ReviewForm = (props) => {
       </div>
       <div>
         <span>rating</span>
-        <ReviewCounter
-          decrement={setDecrement}
-          increment={setIncrement}
-          count={count}
+        <Counter
+          onDecrement={setDecrement}
+          onIncrement={setIncrement}
+          value={rating}
         />
       </div>
       <button onClick={() => setReset()}>clear</button>

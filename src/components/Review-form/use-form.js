@@ -6,17 +6,14 @@ const MIN_COUNT = 0;
 const DEFAULT_FROM_VALUE = {
   name: "",
   text: "",
-  count: MIN_COUNT,
-  increment: "",
-  decrement: "",
-  reset: "",
+  rating: MAX_COUNT,
 };
 
 const SET_NAME_ACTION = "SET_NAME_ACTION";
 const SET_TEXT_ACTION = "SET_TEXT_ACTION";
-const SET_DECREMENT = "SET_DECREMENT";
-const SET_INCREMENT = "SET_INCREMENT";
-const SET_RESET = "SET_RESET";
+const SET_DECREMENT_ACTION = "SET_DECREMENT";
+const SET_INCREMENT_ACTION = "SET_INCREMENT";
+const SET_RESET_ACTION = "SET_RESET";
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
@@ -24,17 +21,17 @@ const reducer = (state, { type, payload }) => {
       return { ...state, name: payload };
     case SET_TEXT_ACTION:
       return { ...state, text: payload };
-    case SET_DECREMENT:
+    case SET_DECREMENT_ACTION:
       return {
         ...state,
-        count: state.count > MIN_COUNT ? state.count - 1 : state.count,
+        rating: Math.max(state.rating - 1, MIN_COUNT),
       };
-    case SET_INCREMENT:
+    case SET_INCREMENT_ACTION:
       return {
         ...state,
-        count: state.count < MAX_COUNT ? state.count + 1 : state.count,
+        rating: Math.min(state.rating + 1, MAX_COUNT),
       };
-    case SET_RESET:
+    case SET_RESET_ACTION:
       return { ...DEFAULT_FROM_VALUE };
     default:
       return state;
@@ -44,18 +41,14 @@ const reducer = (state, { type, payload }) => {
 export const useForm = () => {
   const [form, dispatch] = useReducer(reducer, DEFAULT_FROM_VALUE);
 
-  const { name, text, count } = form;
-
   const setName = (name) => dispatch({ type: SET_NAME_ACTION, payload: name });
   const setText = (text) => dispatch({ type: SET_TEXT_ACTION, payload: text });
-  const setDecrement = () => dispatch({ type: SET_DECREMENT });
-  const setIncrement = () => dispatch({ type: SET_INCREMENT });
-  const setReset = () => dispatch({ type: SET_RESET });
+  const setDecrement = () => dispatch({ type: SET_DECREMENT_ACTION });
+  const setIncrement = () => dispatch({ type: SET_INCREMENT_ACTION });
+  const setReset = () => dispatch({ type: SET_RESET_ACTION });
 
   return {
-    name,
-    text,
-    count,
+    form,
     setDecrement,
     setIncrement,
     setName,

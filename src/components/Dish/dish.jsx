@@ -1,4 +1,4 @@
-import { DishCounter } from "./dishCounter";
+import { DishCounter } from "../DishCounter/dishCounter";
 
 export const Dish = ({ dish }) => {
   return (
