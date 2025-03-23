@@ -1,9 +1,9 @@
 import { useProgress } from "./use-progress";
 
-import "./progress-bar.css";
+import styles from "./progress-bar.module.css";
 
 export const ProgressBar = () => {
   const scrollProgress = useProgress();
 
-  return <div className="progress-bar" style={{ width: scrollProgress }}></div>;
+  return <div className={styles.root} style={{ width: scrollProgress }}></div>;
 };

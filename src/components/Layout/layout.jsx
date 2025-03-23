@@ -1,16 +1,13 @@
 import { Header } from "../Header/header";
 import { Footer } from "../Footer/footer";
 import { ProgressBar } from "../Progress-bar/progress-bar";
+import { ToggleTheme } from "../Toggle-theme/toggle-theme";
 
-const layoutStyle = {
-  display: "grid",
-  gridTemplateRows: "auto 1fr auto",
-  minHeight: "100vh",
-};
+import styles from "./layout.module.css";
 
 export const Layout = ({ children }) => {
   return (
-    <div style={layoutStyle}>
+    <div className={styles.root}>
       <ProgressBar />
       <Header />
       <section>{children}</section>

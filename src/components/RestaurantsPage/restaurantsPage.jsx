@@ -8,12 +8,18 @@ export const RestaurantsPage = () => {
   const [activeRestaurant, setActiveRestaurant] = useState(restaurants[0]);
   return (
     <div>
-      <RestaurantList restaurants={restaurants} onSetActiveRestaurant={setActiveRestaurant} activeRestaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <RestaurantList
+        restaurants={restaurants}
+        onSetActiveRestaurant={setActiveRestaurant}
+        activeRestaurant={activeRestaurant}
+      />
+      <div className={"container"}>
+        <Restaurant restaurant={activeRestaurant}></Restaurant>
+        <Restaurant restaurant={activeRestaurant}></Restaurant>
+        <Restaurant restaurant={activeRestaurant}></Restaurant>
+        <Restaurant restaurant={activeRestaurant}></Restaurant>
+        <Restaurant restaurant={activeRestaurant}></Restaurant>
+      </div>
     </div>
   );
 };
