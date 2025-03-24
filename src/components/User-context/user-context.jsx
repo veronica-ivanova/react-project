@@ -2,17 +2,15 @@ import { useState } from "react";
 import { UserContext as UserContextProvider } from ".";
 
 export const UserContext = ({ children }) => {
-  const [isAuth, setAuth] = useState("Джо");
+  const [isAuth, setIsAuth] = useState(false);
+  const [userName, setUserName] = useState("");
 
   const userAuth = () => {
-    if (isAuth === "Джо") {
-      setAuth("");
-    } else {
-      setAuth("Джо");
-    }
+    setIsAuth((prev) => !prev);
+    setUserName((prev) => (prev ? "" : "Джо"));
   };
   return (
-    <UserContextProvider value={{ isAuth, userAuth }}>
+    <UserContextProvider value={{ isAuth, userAuth, userName }}>
       {children}
     </UserContextProvider>
   );

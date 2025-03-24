@@ -11,11 +11,11 @@
   gap: 10px;
 }
 
-.btnClear {
+.buttonClear {
   padding: 5px;
   border-radius: 20px;
   background-color: var(--light-gray-color);
 }
-.btnClear:hover {
+.buttonClear:hover {
   background-color: var(--gray-color);
 }

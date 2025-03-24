@@ -7,7 +7,11 @@ export const ToggleTheme = ({}) => {
   const { theme, toggleTheme } = use(ThemeContext);
 
   return (
-    <Button className={styles.root} onClick={toggleTheme}>
+    <Button
+      className={styles.root}
+      onClick={toggleTheme}
+      viewVariant="themeToggle"
+    >
       {theme === "light" ? "switch to dark" : "switch to light"}
     </Button>
   );

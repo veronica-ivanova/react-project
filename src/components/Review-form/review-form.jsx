@@ -31,7 +31,7 @@ export const ReviewForm = (props) => {
           value={rating}
         />
       </div>
-      <button onClick={() => setReset()} className={styles.btnClear}>
+      <button onClick={setReset} className={styles.buttonClear}>
         clear
       </button>
     </div>

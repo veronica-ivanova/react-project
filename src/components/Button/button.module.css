@@ -19,10 +19,16 @@
   color: var(--light-color);
 }
 
-.btnShadow {
+.buttonShadow {
   position: relative;
 }
-.btnShadow:hover {
+.buttonShadow:hover {
   color: var(--dark-primary-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.themeToggle {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
 }

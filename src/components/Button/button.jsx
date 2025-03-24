@@ -9,6 +9,7 @@ export const Button = ({
   disabled,
   onClick,
   colorViewVariant = "default",
+  viewVariant = "default",
   className,
 }) => {
   const { theme } = use(ThemeContext);
@@ -17,12 +18,12 @@ export const Button = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      // className={`${styles.root} ${colorViewVariant === "default" && styles.default}`}
-      className={classNames(styles.root, styles.btnShadow, className, {
+      className={classNames(styles.root, styles.buttonShadow, className, {
         [styles.default]: colorViewVariant === "default",
         [styles.active]: colorViewVariant === "active",
         [styles.light]: theme === "light",
         [styles.dark]: theme === "dark",
+        [styles.themeToggle]: viewVariant === "themeToggle",
       })}
     >
       {children}

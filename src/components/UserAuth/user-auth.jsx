@@ -4,13 +4,13 @@ import { UserContext } from "../User-context/index";
 import styles from "./user-auth.module.css";
 
 export const UserAuth = ({}) => {
-  const { isAuth, userAuth } = use(UserContext);
+  const { isAuth, userAuth, userName } = use(UserContext);
 
   return (
     <>
-      {isAuth === "Джо" ? (
+      {isAuth ? (
         <div className={styles.root}>
-          {isAuth}
+          {userName}
           <Button onClick={userAuth}>"Выйти"</Button>
         </div>
       ) : (
