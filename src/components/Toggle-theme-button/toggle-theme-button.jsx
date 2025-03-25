@@ -1,9 +1,9 @@
 import { use } from "react";
 import { Button } from "../button/button";
 import { ThemeContext } from "../Theme-context/index";
-import styles from "./toggle-theme.module.css";
+import styles from "./toggle-theme-button.module.css";
 
-export const ToggleTheme = ({}) => {
+export const ToggleThemeButton = ({}) => {
   const { theme, toggleTheme } = use(ThemeContext);
 
   return (

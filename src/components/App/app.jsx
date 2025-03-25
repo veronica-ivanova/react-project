@@ -1,18 +1,18 @@
 import { Layout } from "../Layout/layout";
 import { RestaurantsPage } from "../RestaurantsPage/restaurantsPage";
-import { ThemeContext } from "../Theme-context/theme-context";
-import { UserContext } from "../User-context/user-context";
+import { ThemeContextProvider } from "../Theme-context/theme-context";
+import { UserContextProvider } from "../User-context/user-context";
 
 import "./app.css";
 
 export const App = () => {
   return (
-    <ThemeContext>
-      <UserContext>
+    <ThemeContextProvider>
+      <UserContextProvider>
         <Layout>
           <RestaurantsPage />
         </Layout>
-      </UserContext>
-    </ThemeContext>
+      </UserContextProvider>
+    </ThemeContextProvider>
   );
 };

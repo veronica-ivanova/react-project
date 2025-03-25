@@ -1,13 +1,13 @@
-import { ToggleTheme } from "../Toggle-theme/toggle-theme";
-import { UserAuth } from "../UserAuth/user-auth";
+import { ToggleThemeButton } from "../Toggle-theme-button/toggle-theme-button";
+import { UserAuthButton } from "../User-auth-button/user-auth-button";
 import styles from "./header.module.css";
 
 export const Header = ({}) => {
   return (
     <header className={styles.root}>
-      <ToggleTheme />
+      <ToggleThemeButton />
       HEADER
-      <UserAuth />
+      <UserAuthButton />
     </header>
   );
 };

@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { UserContext as UserContextProvider } from ".";
+import { UserContext } from ".";
 
-export const UserContext = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
-  const [userName, setUserName] = useState("");
+export const UserContextProvider = ({ children }) => {
+  const [auth, setAuth] = useState({ isAuth: false });
 
   const userAuth = () => {
-    setIsAuth((prev) => !prev);
-    setUserName((prev) => (prev ? "" : "Джо"));
+    setAuth((prev) => {
+      return prev.isAuth ? { isAuth: false } : { isAuth: true, name: "User" };
+    });
   };
-  return (
-    <UserContextProvider value={{ isAuth, userAuth, userName }}>
-      {children}
-    </UserContextProvider>
-  );
+
+  return <UserContext value={{ auth, userAuth }}>{children}</UserContext>;
 };

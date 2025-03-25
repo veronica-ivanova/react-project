@@ -6,7 +6,7 @@ import { use } from "react";
 import styles from "./reviews.module.css";
 
 export const Reviews = ({ reviews }) => {
-  const { isAuth } = use(UserContext);
+  const { auth } = use(UserContext);
 
   return (
     <div>
@@ -22,7 +22,7 @@ export const Reviews = ({ reviews }) => {
             </li>
           ))}
         </ul>
-        {isAuth ? <ReviewForm /> : null}
+        {auth.isAuth ? <ReviewForm /> : null}
       </div>
     </div>
   );

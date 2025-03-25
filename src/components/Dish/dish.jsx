@@ -5,12 +5,12 @@ import { use } from "react";
 import styles from "./dish.module.css";
 
 export const Dish = ({ dish }) => {
-  const { isAuth } = use(UserContext);
+  const { auth } = use(UserContext);
 
   return (
     <div className={styles.root}>
       <span className={styles.dishName}>{dish.name}</span>
-      {isAuth ? <DishCounter /> : null}
+      {auth.isAuth ? <DishCounter /> : null}
     </div>
   );
 };
