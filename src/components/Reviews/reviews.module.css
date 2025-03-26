@@ -1,0 +1,21 @@
+.headingName {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.headingWrapper {
+  background-color: var(--light-color);
+  padding: 10px;
+  text-align: center;
+}
+
+.contentWrapper {
+  padding: 10px 30px;
+  display: grid;
+  gap: 20px;
+}
+
+.reviewsWrapper {
+  display: grid;
+  gap: 10px;
+}

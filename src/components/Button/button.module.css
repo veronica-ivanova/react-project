@@ -1,0 +1,34 @@
+.root {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 30px;
+}
+
+.active {
+  background-color: var(--dark-primary-color);
+  color: var(--dark-color);
+}
+
+.light.default {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.dark.default {
+  background-color: var(--gray-color);
+  color: var(--light-color);
+}
+
+.buttonShadow {
+  position: relative;
+}
+.buttonShadow:hover {
+  color: var(--dark-primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.themeToggle {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
+}

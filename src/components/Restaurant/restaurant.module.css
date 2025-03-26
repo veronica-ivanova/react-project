@@ -1,0 +1,24 @@
+.root {
+  min-height: 600px;
+  margin-bottom: 30px;
+  background-color: var(--light-color);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.headingWrapper {
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 20px;
+}
+
+.headingName {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px;
+}

@@ -1,10 +1,15 @@
 import { Dish } from "../Dish/dish";
 
-export const Menu = ({ menu }) => {
+import styles from "./menu.module.css";
+
+export const Menu = ({ menu, className }) => {
   return (
-    <div>
-      <h3>Меню</h3>
-      <ul>
+    <div className={className}>
+      <div className={styles.headingWrapper}>
+        <h3 className={styles.headingName}>Меню</h3>
+      </div>
+
+      <ul className={styles.contentWrapper}>
         {menu.map((dish) => (
           <li key={dish.id}>
             <Dish dish={dish} />

@@ -1,3 +1,5 @@
+import styles from "./review.module.css";
+
 export const Review = ({ review }) => {
-  return <>{review.text}</>;
+  return <div className={styles.root}>{review.text}</div>;
 };

@@ -1,0 +1,12 @@
+.tab {
+  margin-right: 10px;
+
+  min-width: 150px;
+}
+
+.restaurantsConainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 10px;
+}

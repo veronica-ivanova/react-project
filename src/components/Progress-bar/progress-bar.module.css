@@ -1,5 +1,5 @@
-.progress-bar {
-  background-color: #dc2626;
+.root {
+  background-color: var(--gray-color);
   top: 0;
   position: fixed;
   height: 10px;

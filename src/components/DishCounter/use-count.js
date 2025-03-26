@@ -12,7 +12,7 @@ export const useCount = () => {
   );
 
   const decrement = useCallback(
-    () => setCount((prevCount) => Math.min(prevCount - 1, MIN_COUNT)),
+    () => setCount((prevCount) => Math.max(prevCount - 1, MIN_COUNT)),
     [MIN_COUNT]
   );
 

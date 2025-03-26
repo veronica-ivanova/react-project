@@ -1,0 +1,21 @@
+.root {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--light-gray-color);
+  padding: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttonClear {
+  padding: 5px;
+  border-radius: 20px;
+  background-color: var(--light-gray-color);
+}
+.buttonClear:hover {
+  background-color: var(--gray-color);
+}

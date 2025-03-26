@@ -1,0 +1,12 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dishName {
+  font-size: 20px;
+  padding: 8px 0;
+}

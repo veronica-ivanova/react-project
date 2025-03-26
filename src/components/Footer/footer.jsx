@@ -1,11 +1,5 @@
-const footerStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  border: "solid",
-  minHeight: "100px",
-};
+import styles from "./footer.module.css";
 
 export const Footer = () => {
-  return <footer style={footerStyle}>FOOTER</footer>;
+  return <footer className={styles.root}>FOOTER</footer>;
 };
