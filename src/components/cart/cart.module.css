@@ -1,0 +1,11 @@
+.root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 200px;
+  background-color: var(--light-color);
+  border-radius: 4px;
+
+  margin-bottom: 30px;
+}

@@ -1,13 +1,12 @@
-import { Review } from "../Review/review";
-import { ReviewForm } from "../review-form/review-form";
 import { UserContext } from "../User-context";
 import { use } from "react";
+import { ReviewForm } from "../review-form/review-form";
+import { ReviewContainer } from "../Review/review-container";
 
 import styles from "./reviews.module.css";
 
-export const Reviews = ({ reviews }) => {
+export const Reviews = ({ reviewsIds }) => {
   const { auth } = use(UserContext);
-
   return (
     <div>
       <div className={styles.headingWrapper}>
@@ -16,9 +15,9 @@ export const Reviews = ({ reviews }) => {
 
       <div className={styles.contentWrapper}>
         <ul className={styles.reviewsWrapper}>
-          {reviews.map((review) => (
-            <li key={review.id}>
-              <Review review={review} />
+          {reviewsIds.map((id) => (
+            <li key={id}>
+              <ReviewContainer id={id} />
             </li>
           ))}
         </ul>

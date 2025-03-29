@@ -1,6 +1,7 @@
 import { use } from "react";
-import { Button } from "../button/button";
 import { UserContext } from "../User-context/index";
+import { Button } from "../button/button";
+
 import styles from "./user-auth-button.module.css";
 
 export const UserAuthButton = () => {
