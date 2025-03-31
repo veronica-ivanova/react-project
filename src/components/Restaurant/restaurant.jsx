@@ -3,8 +3,7 @@ import { Menu } from "../Menu/menu";
 
 import styles from "./restaurant.module.css";
 
-export const Restaurant = ({ restaurant }) => {
-  const { name, menu, reviews } = restaurant;
+export const Restaurant = ({ name, menuIds, reviewsIds }) => {
   return (
     <div className={styles.root}>
       <div className={styles.headingWrapper}>
@@ -12,10 +11,10 @@ export const Restaurant = ({ restaurant }) => {
       </div>
 
       <div className={styles.contentWrapper}>
-        <Menu className={styles.menu} menu={menu} />
+        <Menu className={styles.menu} menuIds={menuIds} />
 
-        {reviews.length ? (
-          <Reviews reviews={reviews} />
+        {reviewsIds.length ? (
+          <Reviews reviewsIds={reviewsIds} />
         ) : (
           "There are no reviews yet"
         )}

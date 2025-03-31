@@ -1,8 +1,8 @@
-import { Dish } from "../Dish/dish";
+import { DishContainer } from "../Dish/dish-container";
 
 import styles from "./menu.module.css";
 
-export const Menu = ({ menu, className }) => {
+export const Menu = ({ menuIds, className }) => {
   return (
     <div className={className}>
       <div className={styles.headingWrapper}>
@@ -10,9 +10,9 @@ export const Menu = ({ menu, className }) => {
       </div>
 
       <ul className={styles.contentWrapper}>
-        {menu.map((dish) => (
-          <li key={dish.id}>
-            <Dish dish={dish} />
+        {menuIds.map((id) => (
+          <li key={id}>
+            <DishContainer id={id} />
           </li>
         ))}
       </ul>
