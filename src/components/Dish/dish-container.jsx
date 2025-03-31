@@ -4,9 +4,6 @@ import { Dish } from "./dish";
 
 export const DishContainer = ({ id }) => {
   const dish = useSelector((state) => selectDishById(state, id));
-
-  console.log(dish);
-
   const { name, price, ingredients } = dish;
   return <Dish id={id} name={name} price={price} ingredients={ingredients} />;
 };
