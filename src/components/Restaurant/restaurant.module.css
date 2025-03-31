@@ -6,6 +6,10 @@
   border-radius: 8px;
   overflow: hidden;
 }
+.contentWrapper {
+  display: grid;
+  padding: 10px;
+}
 .headingWrapper {
   text-align: center;
   background-color: var(--primary-color);
@@ -17,8 +21,8 @@
   font-weight: 700;
 }
 
-.contentWrapper {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 10px;
+.tabWrapper {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
 }

@@ -1,12 +1,17 @@
 .root {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+  background-color: var(--light-color);
+  font-size: 20px;
 }
 
-.dishName {
-  font-size: 20px;
-  padding: 8px 0;
+.headingName {
+  font-size: 24px;
+  font-weight: 700;
 }

@@ -1,4 +1,7 @@
-import { DishContainer } from "../Dish/dish-container";
+import { DishTabContainer } from "../Dish-tab/dish-tab-container";
+import { useSelector } from "react-redux";
+import { selectDishesIds } from "../../redux/entities/dishes/slice";
+import { selectRestaurantById } from "../../redux/entities/restaurants/slice";
 
 import styles from "./menu.module.css";
 
@@ -12,7 +15,7 @@ export const Menu = ({ menuIds, className }) => {
       <ul className={styles.contentWrapper}>
         {menuIds.map((id) => (
           <li key={id}>
-            <DishContainer id={id} />
+            <DishTabContainer id={id} />
           </li>
         ))}
       </ul>
