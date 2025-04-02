@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice";
-import { Tab } from "../Tab/tab";
+import { TabLink } from "../Tab-link/Tablink";
 
 export const RestaurantTabContainer = ({ id, onClick, isActive }) => {
   const restaurant = useSelector((state) => selectRestaurantById(state, id));
@@ -10,13 +10,8 @@ export const RestaurantTabContainer = ({ id, onClick, isActive }) => {
   }
 
   const { name } = restaurant;
+
   return (
-    <Tab
-      title={name}
-      onClick={onClick}
-      isActive={isActive}
-      colorViewVariant="default"
-      viewVariant="restaurantTab"
-    />
+    <TabLink to={id}>{({ isActive }) => (isActive ? "active" : name)}</TabLink>
   );
 };

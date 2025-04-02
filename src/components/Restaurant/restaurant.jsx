@@ -1,5 +1,5 @@
-import { Reviews } from "../Reviews/reviews";
-import { Menu } from "../Menu/menu";
+import { Outlet } from "react-router";
+import { TabLink } from "../Tab-link/Tablink";
 
 import styles from "./restaurant.module.css";
 
@@ -11,13 +11,12 @@ export const Restaurant = ({ name, menuIds, reviewsIds }) => {
       </div>
 
       <div className={styles.contentWrapper}>
-        <Menu className={styles.menu} menuIds={menuIds} />
+        <nav className={styles.tabWrapper}>
+          <TabLink to={"menu"}>Меню</TabLink>
+          <TabLink to={"reviews"}>Отзывы</TabLink>
+        </nav>
 
-        {reviewsIds.length ? (
-          <Reviews reviewsIds={reviewsIds} />
-        ) : (
-          "There are no reviews yet"
-        )}
+        <Outlet />
       </div>
     </div>
   );

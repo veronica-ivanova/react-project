@@ -3,19 +3,16 @@ import { useSelector } from "react-redux";
 import { selectRestaurantsIds } from "../../redux/entities/restaurants/slice";
 import { RestaurantContainer } from "../Restaurant/restaurant-container";
 import { RestaurantTabContainer } from "../Restaurant-tab/restaurant-tab-container";
+import { Outlet } from "react-router";
 
 import styles from "./restaurantsPage.module.css";
 
 export const RestaurantsPage = () => {
   const restaurantsIds = useSelector(selectRestaurantsIds);
+
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurantsIds[0]
   );
-
-  // const activeRestaurant = restaurants.find(
-  //   ({ id }) => id === activeRestaurantId
-  // );
-
   const handleSetActiveRestaurantId = (id) => {
     if (activeRestaurantId === id) {
       return;
@@ -37,10 +34,7 @@ export const RestaurantsPage = () => {
           />
         ))}
       </div>
-
-      <div>
-        <RestaurantContainer key={activeRestaurantId} id={activeRestaurantId} />
-      </div>
+      <Outlet />
     </div>
   );
 };
