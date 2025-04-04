@@ -10,7 +10,7 @@ const initialState = {
   ids: normalizedUsers.map(({ id }) => id),
 };
 export const usersSlice = createSlice({
-  name: "usersSlice",
+  name: "users",
   initialState,
   selectors: {
     selectUserById: (state, id) => state.entities[id],

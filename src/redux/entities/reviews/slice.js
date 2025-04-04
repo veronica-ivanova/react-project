@@ -10,7 +10,7 @@ const initialState = {
   ids: normalizedReviews.map(({ id }) => id),
 };
 export const reviewsSlice = createSlice({
-  name: "reviewsSlice",
+  name: "reviews",
   initialState,
   selectors: {
     selectReviewById: (state, id) => state.entities[id],

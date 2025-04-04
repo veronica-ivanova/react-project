@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { RestaurantsPage } from "../RestaurantsPage/restaurantsPage";
+import { RestaurantsPage } from "../Restaurants-page/restaurants-page";
 import { ThemeContextProvider } from "../Theme-context/theme-context";
 import { UserContextProvider } from "../User-context/user-context";
 import { store } from "../../redux/store";
