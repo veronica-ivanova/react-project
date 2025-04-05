@@ -3,7 +3,7 @@ import { TabLink } from "../Tab-link/Tablink";
 
 import styles from "./restaurant.module.css";
 
-export const Restaurant = ({ name, menuIds, reviewsIds }) => {
+export const Restaurant = ({ name }) => {
   return (
     <div className={styles.root}>
       <div className={styles.headingWrapper}>

@@ -1,29 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  selectRequestStatus,
-  selectRestaurantsIds,
-} from "../../redux/entities/restaurants/slice";
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../redux/entities/restaurants/slice";
 import { RestaurantTabContainer } from "../Restaurant-tab/restaurant-tab-container";
 import { Outlet } from "react-router";
 import { getRestaurants } from "../../redux/entities/restaurants/get-restaurants";
-import { useEffect } from "react";
 
 import styles from "./restaurants-page.module.css";
+import { useRequest } from "../../redux/hooks/use-request";
 
 export const RestaurantsPage = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getRestaurants());
-  }, [dispatch]);
-
+  const requestStatus = useRequest(getRestaurants);
   const restaurantsIds = useSelector(selectRestaurantsIds);
-  const requestStatus = useSelector(selectRequestStatus);
 
   if (requestStatus === "idle" || requestStatus === "pending") {
     return "loading....";
   }
-
   if (requestStatus === "rejected") {
     return "error";
   }
