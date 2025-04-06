@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantsIds } from "../../redux/entities/restaurants/slice";
-import { RestaurantTabContainer } from "../Restaurant-tab/restaurant-tab-container";
+import { RestaurantTabContainer } from "../restaurant-tab/restaurant-tab-container";
 import { Outlet } from "react-router";
 import { getRestaurants } from "../../redux/entities/restaurants/get-restaurants";
 

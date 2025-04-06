@@ -1,5 +1,5 @@
 import { use } from "react";
-import { UserContext } from "../User-context/index";
+import { UserContext } from "../user-context/index";
 import { Button } from "../button/button";
 
 import styles from "./user-auth-button.module.css";

@@ -1,6 +1,6 @@
-import { Header } from "../Header/header";
-import { Footer } from "../Footer/footer";
-import { ProgressBar } from "../Progress-bar/progress-bar";
+import { Header } from "../header/header";
+import { Footer } from "../footer/footer";
+import { ProgressBar } from "../progress-bar/progress-bar";
 import { CartContainer } from "../cart/cart-container";
 import { Outlet } from "react-router";
 

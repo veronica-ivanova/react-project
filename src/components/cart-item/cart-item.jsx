@@ -1,4 +1,4 @@
-import { DishCounter } from "../DishCounter/dishCounter";
+import { DishCounter } from "../dish-counter/dish-counter.jsx";
 import styles from './cart-item.module.css'
 
 export const CartItem = ({ dishName, id}) => {

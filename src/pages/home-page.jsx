@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Modal } from "../components/Modal/modal"
+import { Modal } from "../components/modal/modal"
 
 export const HomePage = (props) => {
   return (

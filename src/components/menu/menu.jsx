@@ -1,4 +1,4 @@
-import { DishTabContainer } from "../Dish-tab/dish-tab-container";
+import { DishTabContainer } from "../dish-tab/dish-tab-container";
 import { useSelector } from "react-redux";
 import { selectDishesIds } from "../../redux/entities/dishes/slice";
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice";

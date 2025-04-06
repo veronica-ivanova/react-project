@@ -1,11 +1,11 @@
 import { Provider } from "react-redux";
-import { RestaurantsPage } from "../Restaurants-page/restaurants-page";
-import { ThemeContextProvider } from "../Theme-context/theme-context";
-import { UserContextProvider } from "../User-context/user-context";
+import { RestaurantsPage } from "../restaurants-page/restaurants-page";
+import { ThemeContextProvider } from "../theme-context/theme-context";
+import { UserContextProvider } from "../user-context/user-context";
 import { store } from "../../redux/store";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router";
 import { HomePage } from "../../pages/home-page";
-import { Layout } from "../Layout/layout";
+import { Layout } from "../layout/layout";
 import { RestaurantPage } from "../../pages/restaurant-page";
 import { Navigate } from "react-router";
 import { MenuPage } from "../../pages/menu-page";

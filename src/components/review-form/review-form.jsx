@@ -1,4 +1,4 @@
-import { Counter } from "../Counter/counter";
+import { Counter } from "../counter/counter";
 import { useForm } from "./use-form";
 
 import styles from "./review-form.module.css";

@@ -1,4 +1,4 @@
-import { TabLink } from "../Tab-link/Tablink";
+import { TabLink } from "../tab-link/tab-link";
 
 import styles from "./dish-tab.module.css";
 

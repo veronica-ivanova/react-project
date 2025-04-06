@@ -1,7 +1,7 @@
-import { UserContext } from "../User-context";
+import { UserContext } from "../user-context";
 import { use } from "react";
 import { ReviewForm } from "../review-form/review-form";
-import { ReviewContainer } from "../Review/review-container";
+import { ReviewContainer } from "../review/review-container";
 
 import styles from "./reviews.module.css";
 

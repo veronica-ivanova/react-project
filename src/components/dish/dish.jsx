@@ -1,4 +1,4 @@
-import { DishCounter } from "../DishCounter/dishCounter";
+import { DishCounter } from "../dish-counter/dish-counter.jsx";
 
 import styles from "./dish.module.css";
 

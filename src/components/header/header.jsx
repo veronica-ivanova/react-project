@@ -1,5 +1,5 @@
-import { ToggleThemeButton } from "../Toggle-theme-button/toggle-theme-button";
-import { UserAuthButton } from "../User-auth-button/user-auth-button";
+import { ToggleThemeButton } from "../toggle-theme-button/toggle-theme-button";
+import { UserAuthButton } from "../user-auth-button/user-auth-button";
 import styles from "./header.module.css";
 
 export const Header = ({}) => {

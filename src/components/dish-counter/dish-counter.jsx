@@ -1,4 +1,4 @@
-import { Counter } from "../Counter/counter";
+import { Counter } from "../counter/counter";
 import { useCount } from "./use-count";
 
 import styles from "./dish-counter.module.css";

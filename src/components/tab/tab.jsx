@@ -1,4 +1,4 @@
-import { Button } from "../Button/button";
+import { Button } from "../button/button";
 import styles from "./tab.module.css";
 
 export const Tab = ({
