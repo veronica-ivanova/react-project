@@ -2,11 +2,6 @@ import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 import { getRestaurants } from "./get-restaurants";
 import { getRestaurant } from "./get-restaurant";
 
-const initialState = {
-  entities: {},
-  ids: [],
-};
-
 export const entityAdapter = createEntityAdapter();
 
 export const restaurantsSlice = createSlice({

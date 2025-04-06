@@ -16,9 +16,4 @@ export const getDishes = createAsyncThunk(
 
     return result;
   }
-  // {
-  //   condition: (_, { getState }) => {
-  //     return !selectDishesTotal(getState());
-  //   },
-  // }
 );
