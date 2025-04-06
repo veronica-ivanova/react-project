@@ -1,7 +1,7 @@
 import { Counter } from "../Counter/counter";
 import { useCount } from "./use-count";
 
-import styles from "./dishCounter.module.css";
+import styles from "./dish-counter.module.css";
 
 export const DishCounter = ({ id }) => {
   const { count, increment, decrement } = useCount(id);
