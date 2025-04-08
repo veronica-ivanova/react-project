@@ -1,11 +1,12 @@
 import { UserContext } from "../user-context";
 import { use } from "react";
 import { ReviewForm } from "../review-form/review-form";
-import { ReviewContainer } from "../review/review-container";
+import { Review } from "../review/review";
 
 import styles from "./reviews.module.css";
 
-export const Reviews = ({ reviewsIds }) => {
+export const Reviews = ({ reviews, onSubmit, isSubmitButtonDisabled}) => {
+
   const { auth } = use(UserContext);
   return (
     <div>
@@ -15,13 +16,13 @@ export const Reviews = ({ reviewsIds }) => {
 
       <div className={styles.contentWrapper}>
         <ul className={styles.reviewsWrapper}>
-          {reviewsIds.map((id) => (
+          {reviews.map(({ id, text, userId}) => (
             <li key={id}>
-              <ReviewContainer id={id} />
+              <Review text={text} userId={userId} />
             </li>
           ))}
         </ul>
-        {auth.isAuth ? <ReviewForm /> : null}
+        {auth.isAuth ? <ReviewForm onSubmit={onSubmit} isSubmitButtonDisabled={isSubmitButtonDisabled} /> : null}
       </div>
     </div>
   );

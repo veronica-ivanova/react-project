@@ -1,11 +1,12 @@
-import { DishTabContainer } from "../dish-tab/dish-tab-container";
-import { useSelector } from "react-redux";
-import { selectDishesIds } from "../../redux/entities/dishes/slice";
-import { selectRestaurantById } from "../../redux/entities/restaurants/slice";
+import { DishTab } from "../dish-tab/dish-tab";
+import { DishCounter } from "../dish-counter/dish-counter.jsx";
+import { UserContext } from "../user-context";
+import { use } from "react";
 
 import styles from "./menu.module.css";
 
-export const Menu = ({ menuIds, className }) => {
+export const Menu = ({ dishes, className }) => {
+  const { auth } = use(UserContext);
   return (
     <div className={className}>
       <div className={styles.headingWrapper}>
@@ -13,9 +14,10 @@ export const Menu = ({ menuIds, className }) => {
       </div>
 
       <ul className={styles.contentWrapper}>
-        {menuIds.map((id) => (
-          <li key={id}>
-            <DishTabContainer id={id} />
+        {dishes.map(({ id, name }) => (
+          <li key={id} className={styles.dishWrapper}>
+            <DishTab name={name} id={id} />
+            {auth.isAuth ? <DishCounter id={id} /> : null}
           </li>
         ))}
       </ul>

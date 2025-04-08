@@ -1,24 +1,29 @@
 import { Reviews } from "./reviews";
-import { useSelector } from "react-redux";
-import { selectReviewsIds } from "../../redux/entities/reviews/slice";
-import { getReviews } from "../../redux/entities/reviews/get-reviews";
-import { useRequest } from "../../redux/hooks/use-request";
-import { getUsers } from "../../redux/entities/users/get-users";
+import {
+  useGetReviewsByRestaurantIdQuery,
+  useGetUsersQuery,
+  useAddReviewMutation,
+} from "../../redux/services/api";
 
 export const ReviewsContainer = ({ restaurantId }) => {
-  const reviewRequestStatus = useRequest(getReviews, restaurantId);
-  const usersRequestStatus = useRequest(getUsers);
 
-  const reviewsIds = useSelector(selectReviewsIds);
+  const { isLoading: isUsersLoading, isError: isUsersError } =
+    useGetUsersQuery();
+  const {
+    isLoading: isGetReviewsLoading,
+    isError: isReviewsError,
+    data,
+  } = useGetReviewsByRestaurantIdQuery(restaurantId);
 
-  const isLoading =
-    reviewRequestStatus === "idle" ||
-    reviewRequestStatus === "pending" ||
-    usersRequestStatus === "idle" ||
-    usersRequestStatus === "pending";
+  const [addReview, { isLoading: isAddReviewLoading }] = useAddReviewMutation();
 
-  const isError =
-    reviewRequestStatus === "rejected" || usersRequestStatus === "rejected";
+  const handleSubmit = (review) => {
+    addReview({ restaurantId: restaurantId, review });
+  };
+
+  const isLoading = isUsersLoading || isGetReviewsLoading;
+
+  const isError = isUsersError || isReviewsError;
 
   if (isLoading) {
     return "loading....";
@@ -27,8 +32,12 @@ export const ReviewsContainer = ({ restaurantId }) => {
     return "error";
   }
 
-  return reviewsIds.length ? (
-    <Reviews reviewsIds={reviewsIds} />
+  return data?.length ? (
+    <Reviews
+      reviews={data}
+      onSubmit={handleSubmit}
+      isSubmitButtonDisabled={isAddReviewLoading}
+    />
   ) : (
     "There are no reviews yet"
   );
