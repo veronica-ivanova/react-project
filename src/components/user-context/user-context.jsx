@@ -6,7 +6,13 @@ export const UserContextProvider = ({ children }) => {
 
   const userAuth = () => {
     setAuth((prev) => {
-      return prev.isAuth ? { isAuth: false } : { isAuth: true, name: "User" };
+      return prev.isAuth
+        ? { isAuth: false }
+        : {
+            isAuth: true,
+            name: "User",
+            userId: "52a63cc0-5a6f-41f3-9774-0161ea4c9b0c",
+          };
     });
   };
 

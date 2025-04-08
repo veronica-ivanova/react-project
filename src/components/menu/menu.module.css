@@ -12,3 +12,11 @@
 .contentWrapper {
   padding: 10px 30px;
 }
+
+.dishWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
