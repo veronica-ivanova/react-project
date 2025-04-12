@@ -1,3 +1,5 @@
+"use client";
+
 import { Counter } from "../counter/counter";
 import { useCount } from "./use-count";
 

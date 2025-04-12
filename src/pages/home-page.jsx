@@ -1,12 +1,16 @@
-import { Link } from "react-router";
-import { Modal } from "../components/modal/modal"
+"use client";
 
-export const HomePage = (props) => {
+import Link from "next/link";
+import { Modal } from "../components/modal/modal";
+
+export const HomePage = () => {
   return (
     <div>
       <div>Home Page</div>
-      <Link to="/restaurants">to restaurants</Link>
-      <Modal> <div>modal</div></Modal>
+      <Link href="/restaurants">to restaurants</Link>
+      <Modal>
+        <div>modal</div>
+      </Modal>
     </div>
   );
 };

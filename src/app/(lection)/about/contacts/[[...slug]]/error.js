@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname, useRouter  } from "next/navigation";
 
 const Error = () => {
-    // const pathname = usePathname();
-    // pathname === '/'
+    const pathname = usePathname();
+    pathname === '/'
 
     const router = useRouter();
     console.log(router)

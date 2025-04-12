@@ -1,3 +1,5 @@
+"use client";
+
 import { CartItem } from "./cart-item";
 import { useGetDishesByRestaurantIdQuery } from "../../redux/services/api";
 

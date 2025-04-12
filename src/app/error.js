@@ -1,7 +1,7 @@
 "use client";
 
 const RootError = () => {
-    return <div>root error</div>
+  return <div>root error</div>;
 };
 
-export default RootError
+export default RootError;

@@ -1,3 +1,5 @@
+"use client";
+
 import { use } from "react";
 import { UserContext } from "../user-context/index";
 import { Button } from "../button/button";
