@@ -1,5 +1,3 @@
-"use client";
-
 import { TabLink } from "../tab-link/tab-link";
 import styles from "./restaurant.module.css";
 

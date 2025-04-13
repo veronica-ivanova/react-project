@@ -22,9 +22,5 @@ export const RestaurantContainer = ({ id }) => {
   }
   const { name } = data;
 
-  return (
-    <>
-      <Restaurant name={name} restaurantId={id} />
-    </>
-  );
+  return <Restaurant name={name} restaurantId={id} />;
 };

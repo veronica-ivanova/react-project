@@ -1,5 +1,3 @@
-"use client";
-
 import { RestaurantsTabsContainer } from "../restaurants-tabs/restaurant-tabs-container.jsx";
 
 export const RestaurantsLayout = ({ children }) => {
