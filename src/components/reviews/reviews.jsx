@@ -1,3 +1,5 @@
+"use client";
+
 import { UserContext } from "../user-context";
 import { use } from "react";
 import { ReviewForm } from "../review-form/review-form";

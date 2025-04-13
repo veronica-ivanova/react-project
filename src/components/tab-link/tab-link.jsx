@@ -1,16 +1,21 @@
-import styles from "./tab-link.module.css";
-import { NavLink } from "react-router";
-import classNames from "classnames";
+"use client";
 
-export const TabLink = ({ to, children }) => {
+import Link from "next/link";
+import classNames from "classnames";
+import { usePathname } from "next/navigation";
+
+import styles from "./tab-link.module.css";
+
+export const TabLink = ({ href, children }) => {
+  const pathname = usePathname();
   return (
-    <NavLink
-      className={({ isActive }) =>
-        classNames(styles.root, isActive && styles.isActive)
-      }
-      to={to}
+    <Link
+      href={href}
+      className={classNames(styles.root, {
+        [styles.isActive]: pathname === href,
+      })}
     >
       {children}
-    </NavLink>
+    </Link>
   );
 };

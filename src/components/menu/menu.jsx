@@ -1,3 +1,5 @@
+"use client";
+
 import { DishTab } from "../dish-tab/dish-tab";
 import { DishCounter } from "../dish-counter/dish-counter.jsx";
 import { UserContext } from "../user-context";
