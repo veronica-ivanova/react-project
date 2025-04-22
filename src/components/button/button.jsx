@@ -5,20 +5,24 @@ import { ThemeContext } from "../theme-context/index";
 
 import classNames from "classnames";
 import styles from "./button.module.css";
+import { useFormStatus } from "react-dom";
 
 export const Button = ({
-  children,
+  title,
   disabled,
   onClick,
   colorViewVariant = "default",
   viewVariant = "default",
   className,
+  formAction,
 }) => {
   const { theme } = use(ThemeContext);
 
+  const { pending } = useFormStatus();
+
   return (
     <button
-      disabled={disabled}
+      disabled={disabled || pending}
       onClick={onClick}
       className={classNames(styles.root, styles.buttonShadow, className, {
         [styles.default]: colorViewVariant === "default",
@@ -27,8 +31,9 @@ export const Button = ({
         [styles.dark]: theme === "dark",
         [styles.themeToggle]: viewVariant === "themeToggle",
       })}
+      formAction={formAction}
     >
-      {children}
+      {title}
     </button>
   );
 };

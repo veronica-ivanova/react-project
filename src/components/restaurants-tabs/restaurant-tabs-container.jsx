@@ -1,17 +1,18 @@
-"use client";
-
-import { useGetRestaurantsQuery } from "../../redux/services/api.js";
+import { getRestaurants } from "@/services/get-restaurants.js";
 import { RestaurantsTabs } from "./restaurants-tabs.jsx";
+import { RestaurantsUpdateButton } from "../restaurants-update-button/restaurants-update-button.jsx";
 
-export const RestaurantsTabsContainer = () => {
-  const { data, isLoading, isError } = useGetRestaurantsQuery();
+export const RestaurantsTabsContainer = async () => {
+  const data = await getRestaurants();
 
-  if (isLoading) {
-    return "loading....";
-  }
-  if (isError) {
-    return "error";
+  if (!data.length) {
+    return null;
   }
 
-  return <RestaurantsTabs restaurants={data} />;
+  return (
+    <div>
+      <RestaurantsTabs restaurants={data} />;
+      <RestaurantsUpdateButton/>
+    </div>
+  )
 };

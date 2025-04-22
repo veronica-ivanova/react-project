@@ -14,7 +14,7 @@ export const UserAuthButton = () => {
   return (
     <div className={styles.root}>
       {isAuth && name && <div className={styles.userName}>{name}</div>}
-      <Button onClick={userAuth}>{isAuth ? "Выйти" : "Войти"}</Button>
+      <Button onClick={userAuth} title={isAuth ? "Выйти" : "Войти"} />
     </div>
   );
 };

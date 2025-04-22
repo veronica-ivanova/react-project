@@ -14,8 +14,7 @@ export const ToggleThemeButton = ({}) => {
       className={styles.root}
       onClick={toggleTheme}
       viewVariant="themeToggle"
-    >
-      {theme === "light" ? "switch to dark" : "switch to light"}
-    </Button>
+      title={theme === "light" ? "switch to dark" : "switch to light"}
+    />
   );
 };
