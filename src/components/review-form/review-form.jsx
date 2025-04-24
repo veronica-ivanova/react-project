@@ -1,53 +1,72 @@
 "use client";
 
-import { Counter } from "../counter/counter";
-import { useForm } from "./use-form";
+import { useRef } from "react";
 import { Button } from "../button/button";
-import { UserContext } from "../user-context";
-import { use } from "react";
+import { useActionState } from "react";
 
 import styles from "./review-form.module.css";
 
-export const ReviewForm = ({ onSubmit, isSubmitButtonDisabled }) => {
-  const { form, setDecrement, setIncrement, setName, setText, setReset } =
-    useForm();
-  const { text, rating, name } = form;
+export const ReviewForm = ({ submitFormAction }) => {
+  const ratingRef = useRef();
 
-  const { auth } = use(UserContext);
-  const { userId } = auth;
+  const [formState, submitAction, isPending] = useActionState(
+    submitFormAction,
+    {
+      text: "default text",
+      rating: 5,
+    }
+  );
 
   return (
     <div className={styles.root}>
-      <div className={styles.wrapper}>
-        <label>Name:</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+      <h3>Review Form</h3>
+      <form action={submitAction}>
+        <div>
+          <label htmlFor="text">Text:</label>
+          <input
+            type="text"
+            id="text"
+            name="text"
+            defaultValue={formState.text}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="rating">Rating:</label>
+          <button
+            type="button"
+            id="decrement-button"
+            onClick={() => ratingRef.current.stepDown()}
+          >
+            -
+          </button>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            min={1}
+            max={5}
+            ref={ratingRef}
+            defaultValue={formState.rating}
+          />
+          <button
+            type="button"
+            id="increment-button"
+            onClick={() => ratingRef.current.stepUp()}
+          >
+            +
+          </button>
+        </div>
+
+        <Button
+          type="submit"
+          formAction={() => submitAction(null)}
+          title="clear"
+          className={styles.buttonClear}
         />
-      </div>
-      <div className={styles.wrapper}>
-        <label>Review text:</label>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} />
-      </div>
-      <div className={styles.wrapper}>
-        <span>Rating:</span>
-        <Counter
-          onDecrement={setDecrement}
-          onIncrement={setIncrement}
-          value={rating}
-        />
-      </div>
-      <Button
-        children="Clear"
-        onClick={setReset}
-        className={styles.buttonClear}
-      />
-      <Button
-        children="Submit"
-        disabled={isSubmitButtonDisabled}
-        onClick={() => onSubmit({ text, rating, userId })}
-      />
+
+        <Button type="submit" title="submit" />
+      </form>
     </div>
   );
 };

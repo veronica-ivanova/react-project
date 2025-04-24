@@ -7,7 +7,7 @@ export const Dish = ({ id, name, price, ingredients }) => {
     <div className={styles.root}>
       <h2 className={styles.headingName}>{name}</h2>
       <span>price: {price}</span>
-      <span>ingredients: {ingredients}</span>
+      <span>ingredients: {ingredients.join(", ")}</span>
       <DishCounter id={id} />
     </div>
   );

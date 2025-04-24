@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Modal } from "../components/modal/modal";
+import { Modal } from "../modal/modal";
 
 export const HomePage = () => {
   return (

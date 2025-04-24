@@ -7,8 +7,7 @@ import { Review } from "../review/review";
 
 import styles from "./reviews.module.css";
 
-export const Reviews = ({ reviews, onSubmit, isSubmitButtonDisabled}) => {
-
+export const Reviews = ({ reviews, submitFormAction }) => {
   const { auth } = use(UserContext);
   return (
     <div>
@@ -18,13 +17,15 @@ export const Reviews = ({ reviews, onSubmit, isSubmitButtonDisabled}) => {
 
       <div className={styles.contentWrapper}>
         <ul className={styles.reviewsWrapper}>
-          {reviews.map(({ id, text, userId}) => (
+          {reviews.map(({ id, text, userId }) => (
             <li key={id}>
               <Review text={text} userId={userId} />
             </li>
           ))}
         </ul>
-        {auth.isAuth ? <ReviewForm onSubmit={onSubmit} isSubmitButtonDisabled={isSubmitButtonDisabled} /> : null}
+        {auth.isAuth ? (
+          <ReviewForm submitFormAction={submitFormAction} />
+        ) : null}
       </div>
     </div>
   );
