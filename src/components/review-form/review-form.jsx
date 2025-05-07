@@ -21,7 +21,7 @@ export const ReviewForm = ({ submitFormAction }) => {
     <div className={styles.root}>
       <h3>Review Form</h3>
       <form action={submitAction}>
-        <div>
+        <div className={styles.wrapper}>
           <label htmlFor="text">Text:</label>
           <input
             type="text"
@@ -31,41 +31,46 @@ export const ReviewForm = ({ submitFormAction }) => {
           />
         </div>
 
-        <div>
+        <div className={styles.wrapper}>
           <label htmlFor="rating">Rating:</label>
-          <button
-            type="button"
-            id="decrement-button"
-            onClick={() => ratingRef.current.stepDown()}
-          >
-            -
-          </button>
-          <input
-            type="number"
-            id="rating"
-            name="rating"
-            min={1}
-            max={5}
-            ref={ratingRef}
-            defaultValue={formState.rating}
-          />
-          <button
-            type="button"
-            id="increment-button"
-            onClick={() => ratingRef.current.stepUp()}
-          >
-            +
-          </button>
+          <div className={styles.ratingWrapper}>
+            <button
+              type="button"
+              id="decrement-button"
+              onClick={() => ratingRef.current.stepDown()}
+              className={styles.btnRating}
+            >
+              -
+            </button>
+            <input
+              type="number"
+              id="rating"
+              name="rating"
+              min={1}
+              max={5}
+              ref={ratingRef}
+              defaultValue={formState.rating}
+              className={styles.rating}
+            />
+            <button
+              type="button"
+              id="increment-button"
+              onClick={() => ratingRef.current.stepUp()}
+              className={styles.btnRating}
+            >
+              +
+            </button>
+          </div>
         </div>
+        <Button type="submit" title="submit" />
 
         <Button
           type="submit"
           formAction={() => submitAction(null)}
           title="clear"
           className={styles.buttonClear}
+          viewVariant="clear"
         />
-
-        <Button type="submit" title="submit" />
       </form>
     </div>
   );

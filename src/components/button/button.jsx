@@ -30,6 +30,7 @@ export const Button = ({
         [styles.light]: theme === "light",
         [styles.dark]: theme === "dark",
         [styles.themeToggle]: viewVariant === "themeToggle",
+        [styles.clear]: viewVariant === "clear",
       })}
       formAction={formAction}
     >
